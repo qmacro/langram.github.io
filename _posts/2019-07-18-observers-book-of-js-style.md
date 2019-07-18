@@ -10,7 +10,7 @@ In the 1970's I had a book which I cherished: [The Observer's Book of Commercial
 
 I guess the interest in spotting and identifying things of interest has never left me, and so I find myself delighting in various examples of style with respect to expressing oneself in code. These days it's mostly in the context of JavaScript; unlike other languages, JavaScript is not only multi-paradigm but extremely malleable, making it possible to leave behind a trace of one's character, often by accident.
 
-This post is to record some of those characterful or otherwise interesting expressions in code, taken predominantly from the Node.js codebase for the SAP Cloud Application Programming Model.
+This post is to record some of those characterful or otherwise interesting expressions in code, taken predominantly from the Node.js codebase for the SAP Cloud Application Programming (CAP) Model.
 
 
 # **File: @sap/cds/server.js**
@@ -65,7 +65,7 @@ Did you notice something odd in that previous example? There was a call to `res.
 res.send (index.html)
 ```
 
-At first I was only semi-aware of something not quite right about the way that looked. But then looking further down in the code, I suddenly realised. `index.html` is not a filename ... it's a property of an object! Further down, we come across this:
+At first I was only semi-aware of something not quite right about the way that appeared. But then looking further down in the code, I suddenly realised. `index.html` is not a filename ... it's a property (`html`) on an object (`index`)! Further down, we come across this, where it's defined:
 
 
 ```javascript
@@ -79,7 +79,9 @@ const index = { get html() {
 }}
 ```
 
-I've not seen the use of a `getter` in the wild that often. According to [the MDN web docu on 'getter'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get): "The `get` syntax binds an object property to a function that will be called when that property is looked up".
+I've not seen the use of a `getter` in the wild that often. According to [the MDN web docu on 'getter'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get):
+
+"The `get` syntax binds an object property to a function that will be called when that property is looked up".
 
 Put simply, you can define properties on an object whose values are dynamic, resolved by a call to a function. Of course, you can also define functions as property values, but that would mean that you'd have to use the call syntax, i.e. `index.html()` in this case. But given the emphasis on something that's more readable than normal, I can see why a getter was used here. Although I think it might take a bit of getting used to.
 
@@ -100,7 +102,7 @@ Part of the reason this had me wondering was simply due to the whitespace - I gu
 
 The value for each is resolved through destructuring. For example, the `app` constant comes from the `cds.env.folders` property which itself has a number of child properties, one of which is `app`. `cds.env` is part of CAP's Node.js API, and provides access to an effective environment computed from different layers of configuration.
 
-Going one example further, the `join` constant ends up having the value of `join` in the `path` package (the value is a function), as you can see in this snippet from a Node.js REPL session:
+Going one example further, the `join` constant ends up having the value of `join` in the Node.js builtin `path` package (the value is a function), as you can see in this snippet from a Node.js REPL session:
 
 ```
 => node

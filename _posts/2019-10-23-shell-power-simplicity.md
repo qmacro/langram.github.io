@@ -210,4 +210,4 @@ And there we have it. We only used a few features of `awk` but they are certainl
 
 I'd encourage you to spend some time in a text-based Unix or Unix-like environment. All the major PC operating systems today have such environments available, either directly (with Linux and macOS) or indirectly via VMs (with ChromeOS and Windows 10).
 
-Happy pipelining!
+The future is terminal. Happy pipelining!

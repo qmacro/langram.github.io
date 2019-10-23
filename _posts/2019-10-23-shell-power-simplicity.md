@@ -173,6 +173,8 @@ To do this, we use the `-F` switch which allows us to define what we want the "f
 5 dat
 ```
 
+> We have to escape the space in the list of delimiters, hence the `\` escape character.
+
 
 What the script (`{ print $2, $NF }`) is doing is simply printing out field number 2 and the last field. We specify field number 2 (`$2`) because there's an empty field number one, because we've split on space. We get the last field by specifying `$NF`, which represents "the number of fields".
 

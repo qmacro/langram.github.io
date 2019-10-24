@@ -42,7 +42,7 @@ Thinking of files and lines immediately switched my brain to shell mode, where o
 
 Another part of the philosophy is "small pieces loosely joined", which, in conjunction with the [pipeline](https://en.wikipedia.org/wiki/Pipeline_(Unix)) concept, and combined with the wonderful simplicity of STDIN (standard input) and STDOUT (standard output), gives us the ridiculously useful ability to send the output of one command into the input of another.
 
- This ability might seem somewhat familiar, particularly if you've been discovering the [fluent interface](https://en.wikipedia.org/wiki/Fluent_interface) style of method chaining in API consumption, as recently shown in how the [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) is used - here's an example from a tutorial "[Install an OData V2 Adapter](https://developers.sap.com/tutorials/cap-cloudsdk-2-v2-adapter.html) which is part of one of this year's SAP TechEd App Space missions "S/4HANA Extensions with Cloud Application Programming Model":
+ This ability might seem somewhat familiar, particularly if you've been discovering the [fluent interface](https://en.wikipedia.org/wiki/Fluent_interface) style of method chaining in API consumption, as recently shown in how the [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) is used - here's an example from a tutorial "[Install an OData V2 Adapter](https://developers.sap.com/tutorials/cap-cloudsdk-2-v2-adapter.html)" which is part of one of this year's SAP TechEd App Space missions "S/4HANA Extensions with Cloud Application Programming Model":
 
 ```javascript
 BusinessPartnerAddress

@@ -86,10 +86,10 @@ That's something we can definitely work with - we need to sum the numbers by fil
 If we're to pass the output of `wc` directly into another program to do the summing, we may trip ourselves up because of this line at the end of the `wc` output:
 
 ```
-22 total
+15 total
 ```
 
-We don't want the value 22 from that total summary line to be included. So we use another program to strip that line out, and pipe `wc`'s output into that.
+We don't want the value 15 from that total summary line to be included. So we use another program to strip that line out, and pipe `wc`'s output into that.
 
 On [GNU](https://en.wikipedia.org/wiki/GNU)-based Unix or Linux systems, we can use the [head](https://en.wikipedia.org/wiki/Head_(Unix)) program to do that for us. `head` will display the first N lines of a file. The GNU version of `head` contains a flag `-n` that can take a negative number, to work backwards from the end of the file, so that we can do this:
 
